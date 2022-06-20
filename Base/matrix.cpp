@@ -16,6 +16,16 @@ template <typename scalar> scalar Matrix<scalar>::at(int row, int col) const {
 template <typename scalar> int Matrix<scalar>::rows() const { return rows_; }
 template <typename scalar> int Matrix<scalar>::cols() const { return cols_; }
 
+template <typename scalar> Matrix<scalar> Matrix<scalar>::transpose() {
+  Matrix<scalar> ret(this->cols(), this->rows());
+  for (int i = 0; i < this->rows(); ++i) {
+    for (int j = 0; j < this->cols(); ++j) {
+      ret[j][i] = this->at(i, j);
+    }
+  }
+  return ret;
+}
+
 template <typename scalar>
 std::vector<scalar> &Matrix<scalar>::operator[](int i) {
   return data_[i];

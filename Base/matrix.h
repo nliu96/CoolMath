@@ -13,6 +13,8 @@ public:
   int rows() const;
   int cols() const;
 
+  Matrix<scalar> transpose();
+
   std::vector<scalar> &operator[](int i);
   Matrix<scalar> operator+(const Matrix<scalar> &rhs);
   Matrix<scalar> operator-(const Matrix<scalar> &rhs);

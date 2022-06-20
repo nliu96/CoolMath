@@ -17,7 +17,7 @@ int main() {
     }
   }
 
-  CoolMath::Matrix<double> o = m * n;
+  CoolMath::Matrix<double> o = m.transpose();
   std::cout << o << std::endl;
   return 0;
 }
