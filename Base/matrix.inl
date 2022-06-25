@@ -6,11 +6,11 @@ namespace CoolMath {
 
 template <typename scalar>
 Matrix<scalar>::Matrix(int rows, int cols) : rows_(rows), cols_(cols) {
-  data_ = std::vector<std::vector<scalar>>(rows, std::vector<scalar>(cols, 0));
+  data_ = std::vector<Vector<scalar>>(rows, Vector<scalar>(cols, 0));
 }
 
 template <typename scalar> scalar Matrix<scalar>::at(int row, int col) const {
-  return data_[row][col];
+  return data_[row].at(col);
 }
 
 template <typename scalar> int Matrix<scalar>::rows() const { return rows_; }
@@ -27,7 +27,7 @@ template <typename scalar> Matrix<scalar> Matrix<scalar>::transpose() {
 }
 
 template <typename scalar>
-std::vector<scalar> &Matrix<scalar>::operator[](int i) {
+Vector<scalar> &Matrix<scalar>::operator[](int i) {
   return data_[i];
 }
 

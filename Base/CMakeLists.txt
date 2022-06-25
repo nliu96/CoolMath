@@ -1,1 +1,1 @@
-add_library(Base STATIC matrix.cpp matrix.h)
+add_library(Base STATIC matrix.h matrix.inl vector.h vector.inl)
